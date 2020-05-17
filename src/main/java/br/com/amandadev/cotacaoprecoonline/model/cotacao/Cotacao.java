@@ -12,7 +12,6 @@ public class Cotacao extends AbstractEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name="produto_id", nullable=false)
-    @JsonBackReference
     private Produto produto;
 
     @Column(name = "NOME_FORNECEDOR")

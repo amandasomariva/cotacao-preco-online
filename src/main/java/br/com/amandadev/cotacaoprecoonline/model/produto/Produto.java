@@ -2,6 +2,7 @@ package br.com.amandadev.cotacaoprecoonline.model.produto;
 
 import br.com.amandadev.cotacaoprecoonline.model.AbstractEntity;
 import br.com.amandadev.cotacaoprecoonline.model.cotacao.Cotacao;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.Column;
@@ -23,7 +24,7 @@ public class Produto extends AbstractEntity {
     private LocalDate dataFinal;
 
     @OneToMany(mappedBy="produto")
-    @JsonManagedReference
+    @JsonIgnore
     private Set<Cotacao> cotacoes;
 
     public Produto() {
