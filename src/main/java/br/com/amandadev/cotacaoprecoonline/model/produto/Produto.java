@@ -3,7 +3,6 @@ package br.com.amandadev.cotacaoprecoonline.model.produto;
 import br.com.amandadev.cotacaoprecoonline.model.AbstractEntity;
 import br.com.amandadev.cotacaoprecoonline.model.cotacao.Cotacao;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +22,7 @@ public class Produto extends AbstractEntity {
     @Column(name = "DATA_FINAL")
     private LocalDate dataFinal;
 
-    @OneToMany(mappedBy="produto")
+    @OneToMany(mappedBy = "produto")
     @JsonIgnore
     private Set<Cotacao> cotacoes;
 
@@ -48,15 +47,15 @@ public class Produto extends AbstractEntity {
         return dataInicial;
     }
 
-    public void setDataInicial(LocalDate dataInicial){
+    public void setDataInicial(LocalDate dataInicial) {
         this.dataInicial = dataInicial;
     }
 
-    public LocalDate getDataFinal(){
+    public LocalDate getDataFinal() {
         return dataFinal;
     }
 
-    public void setDataFinal(LocalDate dataFinal){
+    public void setDataFinal(LocalDate dataFinal) {
         this.dataFinal = dataFinal;
     }
 
